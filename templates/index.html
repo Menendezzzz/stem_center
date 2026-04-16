@@ -2,176 +2,199 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>STEM SUPERNOVA</title>
-
-    <meta name="google-site-verification" content="i_nk1G7MK2xqEvNVPQzdurDaMF18uUoBO_EqqoFuZd0" />
-
-    <!-- Bootstrap 5 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Свой CSS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STEM SUPERNOVA — Образовательный центр</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 </head>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
 <body>
 
-<!-- 🔷 Шапка -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
-        <a class="navbar-brand" href="#">
-            <img src="https://via.placeholder.com/40" alt="logo" class="me-2">
-            STEM SUPERNOVA
-        </a>
-    </div>
-</nav>
+<div class="bg-shape circle-f1"></div>
+<div class="bg-shape triangle-f1"></div>
+<div class="bg-shape rect-f1"></div>
+<div class="bg-shape circle-f2"></div>
+<div class="bg-shape triangle-f2"></div>
+<div class="bg-shape rect-f2"></div>
+<div class="bg-shape circle-f3"></div>
+<div class="bg-shape triangle-f3"></div>
+<div class="bg-shape rect-f3"></div>
+<div class="bg-shape circle-f4"></div>
+<div class="bg-shape triangle-f4"></div>
+<div class="bg-shape rect-f4"></div>
+<div class="bg-shape triangle-f5"></div>
+<div class="bg-shape circle-f5"></div>
 
-<!-- 🔷 Hero -->
-<header class="hero text-center text-white">
-    <div class="container">
-        <h1>Образовательный центр будущего</h1>
-        <p>Развиваем навыки в IT, науке и технологиях</p>
-        <a href="#contact" class="btn btn-warning">Записаться</a>
+<header class="header">
+    <div class="container header-flex">
+        <img src="{{ url_for('static', filename='images/logo.png') }}" class="mini-logo" alt="Logo">
+        <a href="#registration" class="btn-top-reg">ЗАПИСАТЬСЯ</a>
     </div>
 </header>
 
-<!-- 🔷 О нас -->
-<section class="container my-5">
-    <h2 class="text-center mb-4">О нас</h2>
-    <p class="text-center">
-        Мы — современный образовательный центр, который помогает студентам освоить программирование,
-        математику и технологии будущего.
-    </p>
-</section>
-
-<!-- 🔷 Преподаватели -->
-<section class="container my-5">
-    <h2 class="text-center mb-4">Преподаватели</h2>
-
-    <div class="accordion" id="teachers">
-
-        <div class="accordion-item">
-            <h2 class="accordion-header">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#t1">
-                    Иван Петров — Математика
-                </button>
-            </h2>
-            <div id="t1" class="accordion-collapse collapse show" data-bs-parent="#teachers">
-                <div class="accordion-body">
-                    Опытный преподаватель математики. Готовит к экзаменам и олимпиадам.
-                    Предметы: алгебра, геометрия.
-                </div>
+<section class="hero section-with-shapes">
+    <div class="container hero-grid">
+        <div class="hero-text">
+            <h1 class="brand-name">STEM <br> SUPERNOVA</h1>
+            <div class="orange-tag">
+                Образовательный центр с курсами для учеников 5 - 8 классов
             </div>
         </div>
-
-        <div class="accordion-item">
-            <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#t2">
-                    Анна Смирнова — Python
-                </button>
-            </h2>
-            <div id="t2" class="accordion-collapse collapse" data-bs-parent="#teachers">
-                <div class="accordion-body">
-                    Программирование с нуля до проектов. Python, Django, основы алгоритмов.
-                </div>
+        
+        <div class="hero-visual">
+            <img src="{{ url_for('static', filename='images/lines.png') }}" class="lines-decor" alt="decor">
+            <div class="image-frame">
+                <img src="{{ url_for('static', filename='images/hero.jpg') }}" class="hero-img">
             </div>
         </div>
-
     </div>
 </section>
 
-<!-- 🔷 Достижения -->
-<section class="bg-light py-5">
+<section class="goal section-with-shapes">
     <div class="container">
-        <h2 class="text-center mb-4">Наши достижения</h2>
+        <div class="banner-box">
+            НАША ЦЕЛЬ — ПОМОЧЬ УЧЕНИКАМ РАСКРЫТЬ СВОЙ ПОТЕНЦИАЛ И ПОЛЮБИТЬ НАУКУ.
+        </div>
+        <div class="goal-visual">
+            <img src="{{ url_for('static', filename='images/students.jpg') }}" class="main-photo">
+        </div>
+    </div>
+</section>
 
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>1000+ студентов</h5>
-                    <p>Обучили более тысячи учеников</p>
-                </div>
+<section class="courses-section section-with-shapes">
+    <div class="container">
+        <div class="courses-layout">
+            <div class="courses-list">
+                <div class="course-item" onclick="openCourse('chem')">Химия</div>
+                <div class="course-item" onclick="openCourse('phys')">Физика</div>
+                <div class="course-item" onclick="openCourse('bio')">Биология</div>
+                <div class="course-item" onclick="openCourse('math')">Математика</div>
+                <div class="course-item" onclick="openCourse('robot')">Робототехника</div>
+                <div class="course-item" onclick="openCourse('prog')">Программирование</div>
             </div>
-
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>50+ курсов</h5>
-                    <p>Разные направления обучения</p>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="card p-3">
-                    <h5>10 преподавателей</h5>
-                    <p>Профессиональная команда</p>
+            
+            <div id="course-overlay" class="course-card-active">
+                <div class="card-content">
+                    <h3 id="c-title">Выберите направление</h3>
+                    <p id="c-desc">Нажмите на любой курс слева, чтобы увидеть подробности.</p>
+                    <img src="{{ url_for('static', filename='chem.jpg') }}" id="c-img">
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- 🔷 Курсы -->
-<section class="container my-5">
-    <h2 class="text-center mb-4">Наши курсы</h2>
-
-    <div class="row">
-
-        <div class="col-md-3">
-            <div class="card p-3">
-                <h5>Python</h5>
-                <p>Основы программирования и логики</p>
-                <button class="btn btn-warning">Записаться</button>
+<section class="teachers-section section-with-shapes">
+    <div class="container">
+        <h2 class="title-white">Наши преподаватели профессионалы своего дела</h2>
+        <div class="teachers-flex">
+            <div class="t-card" onclick="showT('t1')">
+                <div class="t-img-box"><img src="{{ url_for('static', filename='images/t1.jpg') }}"></div>
+                <span>Блек Бро</span>
+            </div>
+            <div class="t-card" onclick="showT('t2')">
+                <div class="t-img-box"><img src="{{ url_for('static', filename='images/t2.jpg') }}"></div>
+                <span>Вайт бро</span>
+            </div>
+            <div class="t-card" onclick="showT('t3')">
+                <div class="t-img-box"><img src="{{ url_for('static', filename='images/t3.jpg') }}"></div>
+                <span>Вуман бро</span>
             </div>
         </div>
-
-        <div class="col-md-3">
-            <div class="card p-3">
-                <h5>Web</h5>
-                <p>HTML, CSS, JavaScript</p>
-                <button class="btn btn-warning">Записаться</button>
-            </div>
-        </div>
-
-        <div class="col-md-3">
-            <div class="card p-3">
-                <h5>Math</h5>
-                <p>Алгебра и подготовка к экзаменам</p>
-                <button class="btn btn-warning">Записаться</button>
-            </div>
-        </div>
-
-        <div class="col-md-3">
-            <div class="card p-3">
-                <h5>Algorithms</h5>
-                <p>Структуры данных и логика</p>
-                <button class="btn btn-warning">Записаться</button>
-            </div>
-        </div>
-
+        <div id="t-info" class="teacher-bio"></div>
     </div>
 </section>
 
-<section id="contact" class="bg-dark text-white py-5">
-    <div class="container text-center">
-        <h2>Запись на курс</h2>
+<section class="reg-section" id="registration">
+    <img src="{{ url_for('static', filename='images/line2.png') }}" class="decor-line-left">
+    <img src="{{ url_for('static', filename='images/lines3.png') }}" class="decor-line-right">
 
-        <form action="/signup" method="POST" class="mt-3">
-
-            <input name="name" class="form-control mb-2" placeholder="Имя">
-
-            <input name="phone" class="form-control mb-2" placeholder="Телефон">
-
-            <select name="course" class="form-control mb-3">
-                <option>Python</option>
-                <option>Web</option>
-                <option>Math</option>
-            </select>
-
-            <button class="btn btn-warning">Отправить заявку</button>
-        </form>
+    <div class="container">
+        <div class="form-wrapper">
+            <h2 style="text-align: center; margin-bottom: 25px; font-family: 'Montserrat';">Запись на обучение</h2>
+            
+            <form action="/submit" method="POST">
+                <div class="form-group">
+                    <label>Имя ученика</label>
+                    <input type="text" name="name" placeholder="Введите имя" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Телефон</label>
+                    <input type="tel" name="phone" placeholder="+996__-__-__" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Выберите курс</label>
+                    <div class="course-selection-grid">
+                        <label class="course-option">
+                            <input type="radio" name="course" value="Химия" checked>
+                            <span class="course-box">Химия</span>
+                        </label>
+                        <label class="course-option">
+                            <input type="radio" name="course" value="Физика">
+                            <span class="course-box">Физика</span>
+                        </label>
+                        <label class="course-option">
+                            <input type="radio" name="course" value="Биология">
+                            <span class="course-box">Биология</span>
+                        </label>
+                        <label class="course-option">
+                            <input type="radio" name="course" value="Математика">
+                            <span class="course-box">Математика</span>
+                        </label>
+                        <label class="course-option">
+                            <input type="radio" name="course" value="Робототехника">
+                            <span class="course-box">Робототехника</span>
+                        </label>
+                        <label class="course-option">
+                            <input type="radio" name="course" value="Программирование">
+                            <span class="course-box">Программирование</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn-submit">ОТПРАВИТЬ ЗАЯВКУ</button>
+            </form>
+        </div>
     </div>
 </section>
+
+<script>
+const courses = {
+    chem: { t: "Химия", d: "Изучение свойств веществ и лабораторные опыты.", i: "images/chem.jpg" },
+    phys: { t: "Физика", d: "Законы природы, механика и электричество.", i: "images/phys.jpg" },
+    bio: { t: "Биология", d: "Мир живой природы и микробиология.", i: "images/bio.jpg" },
+    // Поправил jpeg на jpg, проверь как в папке!
+    math: { t: "Математика", d: "Логическое мышление и решение сложных задач.", i: "images/math.jpeg" }, 
+    robot: { t: "Робототехника", d: "Сборка и программирование роботов на базе Arduino.", i: "images/robot.jpg" },
+    prog: { t: "Программирование", d: "Разработка игр и приложений на языке Python.", i: "images/prog.png" }
+};
+
+function openCourse(id) {
+    const card = document.getElementById('course-overlay');
+    document.getElementById('c-title').innerText = courses[id].t;
+    document.getElementById('c-desc').innerText = courses[id].d;
+    document.getElementById('c-img').src = "/static/" + courses[id].i;
+    card.style.display = 'flex';
+    card.classList.remove('pop');
+    void card.offsetWidth; 
+    card.classList.add('pop');
+}
+
+function showT(id) {
+    const data = {
+        t1: "Блек Бро — Специалист по прикладной физике и химии. Опыт 5 лет.",
+        t2: "Вайт бро — Олимпиадный тренер по математике и логике.",
+        t3: "Вуман бро — Мастер робототехники и 3D-моделирования."
+    };
+    const info = document.getElementById('t-info');
+    info.innerText = data[id];
+    info.style.display = "block";
+    info.classList.remove('pop');
+    void info.offsetWidth; 
+    info.classList.add('pop');
+}
+</script>
 
 </body>
 </html>
