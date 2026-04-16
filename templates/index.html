@@ -9,20 +9,11 @@
 </head>
 <body>
 
-<div class="bg-shape circle-f1"></div>
-<div class="bg-shape triangle-f1"></div>
-<div class="bg-shape rect-f1"></div>
-<div class="bg-shape circle-f2"></div>
-<div class="bg-shape triangle-f2"></div>
-<div class="bg-shape rect-f2"></div>
-<div class="bg-shape circle-f3"></div>
-<div class="bg-shape triangle-f3"></div>
-<div class="bg-shape rect-f3"></div>
-<div class="bg-shape circle-f4"></div>
-<div class="bg-shape triangle-f4"></div>
-<div class="bg-shape rect-f4"></div>
-<div class="bg-shape triangle-f5"></div>
-<div class="bg-shape circle-f5"></div>
+<div class="bg-shape circle-f1"></div><div class="bg-shape triangle-f1"></div><div class="bg-shape rect-f1"></div>
+<div class="bg-shape circle-f2"></div><div class="bg-shape triangle-f2"></div><div class="bg-shape rect-f2"></div>
+<div class="bg-shape circle-f3"></div><div class="bg-shape triangle-f3"></div><div class="bg-shape rect-f3"></div>
+<div class="bg-shape circle-f4"></div><div class="bg-shape triangle-f4"></div><div class="bg-shape rect-f4"></div>
+<div class="bg-shape triangle-f5"></div><div class="bg-shape circle-f5"></div>
 
 <header class="header">
     <div class="container header-flex">
@@ -35,28 +26,19 @@
     <div class="container hero-grid">
         <div class="hero-text">
             <h1 class="brand-name">STEM <br> SUPERNOVA</h1>
-            <div class="orange-tag">
-                Образовательный центр с курсами для учеников 5 - 8 классов
-            </div>
+            <div class="orange-tag">Образовательный центр с курсами для учеников 5 - 8 классов</div>
         </div>
-        
         <div class="hero-visual">
-            <img src="{{ url_for('static', filename='images/lines.png') }}" class="lines-decor" alt="decor">
-            <div class="image-frame">
-                <img src="{{ url_for('static', filename='images/hero.jpg') }}" class="hero-img">
-            </div>
+            <img src="{{ url_for('static', filename='images/lines.png') }}" class="lines-decor">
+            <div class="image-frame"><img src="{{ url_for('static', filename='images/hero.jpg') }}" class="hero-img"></div>
         </div>
     </div>
 </section>
 
 <section class="goal section-with-shapes">
     <div class="container">
-        <div class="banner-box">
-            НАША ЦЕЛЬ — ПОМОЧЬ УЧЕНИКАМ РАСКРЫТЬ СВОЙ ПОТЕНЦИАЛ И ПОЛЮБИТЬ НАУКУ.
-        </div>
-        <div class="goal-visual">
-            <img src="{{ url_for('static', filename='images/students.jpg') }}" class="main-photo">
-        </div>
+        <div class="banner-box">НАША ЦЕЛЬ — ПОМОЧЬ УЧЕНИКАМ РАСКРЫТЬ СВОЙ ПОТЕНЦИАЛ И ПОЛЮБИТЬ НАУКУ.</div>
+        <div class="goal-visual"><img src="{{ url_for('static', filename='images/students.jpg') }}" class="main-photo"></div>
     </div>
 </section>
 
@@ -71,12 +53,11 @@
                 <div class="course-item" onclick="openCourse('robot')">Робототехника</div>
                 <div class="course-item" onclick="openCourse('prog')">Программирование</div>
             </div>
-            
             <div id="course-overlay" class="course-card-active">
                 <div class="card-content">
                     <h3 id="c-title">Выберите направление</h3>
-                    <p id="c-desc">Нажмите на любой курс слева, чтобы увидеть подробности.</p>
-                    <img src="{{ url_for('static', filename='chem.jpg') }}" id="c-img">
+                    <p id="c-desc">Нажмите на курс слева.</p>
+                    <img src="{{ url_for('static', filename='images/chem.jpg') }}" id="c-img">
                 </div>
             </div>
         </div>
@@ -85,7 +66,7 @@
 
 <section class="teachers-section section-with-shapes">
     <div class="container">
-        <h2 class="title-white">Наши преподаватели профессионалы своего дела</h2>
+        <h2 class="title-white">Наши преподаватели профессионалы</h2>
         <div class="teachers-flex">
             <div class="t-card" onclick="showT('t1')">
                 <div class="t-img-box"><img src="{{ url_for('static', filename='images/t1.jpg') }}"></div>
@@ -107,67 +88,46 @@
 <section class="reg-section" id="registration">
     <img src="{{ url_for('static', filename='images/line2.png') }}" class="decor-line-left">
     <img src="{{ url_for('static', filename='images/lines3.png') }}" class="decor-line-right">
-
     <div class="container">
         <div class="form-wrapper">
             <h2 style="text-align: center; margin-bottom: 25px; font-family: 'Montserrat';">Запись на обучение</h2>
-            
-            <form action="/submit" method="POST">
-                <div class="form-group">
-                    <label>Имя ученика</label>
-                    <input type="text" name="name" placeholder="Введите имя" required>
-                </div>
-                
-                <div class="form-group">
-                    <label>Телефон</label>
-                    <input type="tel" name="phone" placeholder="+996__-__-__" required>
-                </div>
-                
+            <form id="enrollmentForm">
+                <div class="form-group"><label>Имя ученика</label><input type="text" name="name" required></div>
+                <div class="form-group"><label>Телефон</label><input type="tel" name="phone" placeholder="+996" required></div>
                 <div class="form-group">
                     <label>Выберите курс</label>
                     <div class="course-selection-grid">
-                        <label class="course-option">
-                            <input type="radio" name="course" value="Химия" checked>
-                            <span class="course-box">Химия</span>
-                        </label>
-                        <label class="course-option">
-                            <input type="radio" name="course" value="Физика">
-                            <span class="course-box">Физика</span>
-                        </label>
-                        <label class="course-option">
-                            <input type="radio" name="course" value="Биология">
-                            <span class="course-box">Биология</span>
-                        </label>
-                        <label class="course-option">
-                            <input type="radio" name="course" value="Математика">
-                            <span class="course-box">Математика</span>
-                        </label>
-                        <label class="course-option">
-                            <input type="radio" name="course" value="Робототехника">
-                            <span class="course-box">Робототехника</span>
-                        </label>
-                        <label class="course-option">
-                            <input type="radio" name="course" value="Программирование">
-                            <span class="course-box">Программирование</span>
-                        </label>
+                        <label class="course-option"><input type="radio" name="course" value="Химия" checked><span class="course-box">Химия</span></label>
+                        <label class="course-option"><input type="radio" name="course" value="Физика"><span class="course-box">Физика</span></label>
+                        <label class="course-option"><input type="radio" name="course" value="Биология"><span class="course-box">Биология</span></label>
+                        <label class="course-option"><input type="radio" name="course" value="Математика"><span class="course-box">Математика</span></label>
+                        <label class="course-option"><input type="radio" name="course" value="Робототехника"><span class="course-box">Роботы</span></label>
+                        <label class="course-option"><input type="radio" name="course" value="Программирование"><span class="course-box">IT</span></label>
                     </div>
                 </div>
-                
                 <button type="submit" class="btn-submit">ОТПРАВИТЬ ЗАЯВКУ</button>
             </form>
         </div>
     </div>
 </section>
 
+<div id="successModal" class="modal-overlay">
+    <div class="modal-content pop">
+        <div style="font-size: 60px;">🚀</div>
+        <h2>УСПЕШНО!</h2>
+        <p>Ваша заявка принята.<br>Мы скоро вам перезвоним!</p>
+        <button onclick="closeModal()" class="btn-close-modal">ОТЛИЧНО</button>
+    </div>
+</div>
+
 <script>
 const courses = {
-    chem: { t: "Химия", d: "Изучение свойств веществ и лабораторные опыты.", i: "images/chem.jpg" },
-    phys: { t: "Физика", d: "Законы природы, механика и электричество.", i: "images/phys.jpg" },
-    bio: { t: "Биология", d: "Мир живой природы и микробиология.", i: "images/bio.jpg" },
-    // Поправил jpeg на jpg, проверь как в папке!
-    math: { t: "Математика", d: "Логическое мышление и решение сложных задач.", i: "images/math.jpeg" }, 
-    robot: { t: "Робототехника", d: "Сборка и программирование роботов на базе Arduino.", i: "images/robot.jpg" },
-    prog: { t: "Программирование", d: "Разработка игр и приложений на языке Python.", i: "images/prog.png" }
+    chem: { t: "Химия", d: "Опыты и реакции.", i: "images/chem.jpg" },
+    phys: { t: "Физика", d: "Законы природы.", i: "images/phys.jpg" },
+    bio: { t: "Биология", d: "Мир живой природы.", i: "images/bio.jpg" },
+    math: { t: "Математика", d: "Логика и задачи.", i: "images/math.jpeg" }, 
+    robot: { t: "Робототехника", d: "Сборка Arduino.", i: "images/robot.jpg" },
+    prog: { t: "Программирование", d: "Python и игры.", i: "images/prog.png" }
 };
 
 function openCourse(id) {
@@ -176,25 +136,28 @@ function openCourse(id) {
     document.getElementById('c-desc').innerText = courses[id].d;
     document.getElementById('c-img').src = "/static/" + courses[id].i;
     card.style.display = 'flex';
-    card.classList.remove('pop');
-    void card.offsetWidth; 
-    card.classList.add('pop');
+    card.classList.remove('pop'); void card.offsetWidth; card.classList.add('pop');
 }
 
 function showT(id) {
-    const data = {
-        t1: "Блек Бро — Специалист по прикладной физике и химии. Опыт 5 лет.",
-        t2: "Вайт бро — Олимпиадный тренер по математике и логике.",
-        t3: "Вуман бро — Мастер робототехники и 3D-моделирования."
-    };
+    const data = { t1: "Блек Бро — Опыт 5 лет.", t2: "Вайт бро — Математика.", t3: "Вуман бро — Роботы." };
     const info = document.getElementById('t-info');
     info.innerText = data[id];
     info.style.display = "block";
-    info.classList.remove('pop');
-    void info.offsetWidth; 
-    info.classList.add('pop');
+    info.classList.remove('pop'); void info.offsetWidth; info.classList.add('pop');
 }
-</script>
 
+// Отправка формы без перезагрузки
+document.getElementById('enrollmentForm').onsubmit = async (e) => {
+    e.preventDefault();
+    const response = await fetch('/submit', { method: 'POST', body: new FormData(e.target) });
+    if (response.ok) {
+        document.getElementById('successModal').style.display = 'flex';
+        e.target.reset();
+    }
+};
+
+function closeModal() { document.getElementById('successModal').style.display = 'none'; }
+</script>
 </body>
 </html>

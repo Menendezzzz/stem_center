@@ -1,5 +1,5 @@
 import requests
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
@@ -25,12 +25,10 @@ def home():
 
 @app.route('/submit', methods=['POST'])
 def submit():
-    # Получаем данные из формы
     name = request.form.get('name')
     phone = request.form.get('phone')
     course = request.form.get('course')
 
-    # Формируем текст для тебя
     message = (
         f"<b>🚀 Новая заявка!</b>\n\n"
         f"<b>👤 Имя:</b> {name}\n"
@@ -39,9 +37,8 @@ def submit():
     )
 
     send_telegram_message(message)
-    
-    # Возвращаем ответ (можно сделать редирект или просто текст)
-    return "Спасибо! Заявка отправлена. Мы свяжемся с вами."
+    # Возвращаем статус 200 (ОК) без текста, чтобы JS показал модалку
+    return '', 200
 
 if __name__ == '__main__':
     app.run(debug=True)
