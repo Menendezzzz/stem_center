@@ -129,54 +129,141 @@ input:focus { border-color: var(--orange); outline: none; background: #FFFBF0; }
 @keyframes pop { 0% { transform: scale(0.9); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
 .pop { animation: pop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; }
 
-/* 📱 Только для телефонов */
+/* 📱 МОБИЛЬНАЯ ВЕРСИЯ (ИСПРАВЛЕННАЯ) */
 @media (max-width: 768px) {
 
     body {
-        padding: 10px;
+        padding: 0;
     }
 
-    /* Заголовки */
-    h1 {
-        font-size: 24px;
+    .container {
+        padding: 0 15px;
+    }
+
+    /* HEADER */
+    .mini-logo {
+        width: 55px;
+    }
+
+    .btn-top-reg {
+        padding: 10px 20px;
+        font-size: 12px;
+    }
+
+    /* HERO */
+    .hero {
+        padding: 120px 0 40px;
+    }
+
+    .hero-grid {
+        flex-direction: column;
         text-align: center;
+        gap: 30px;
     }
 
-    h2 {
-        font-size: 18px;
-        text-align: center;
+    .brand-name {
+        font-size: 48px;
+        line-height: 1;
     }
 
-    /* Карточки курсов */
-    .course-card {
-        width: 100% !important;
-        margin-bottom: 15px;
+    .orange-tag {
+        font-size: 14px;
+        padding: 10px 20px;
     }
 
-    /* Контейнер курсов */
-    .courses-container {
-        flex-direction: column !important;
-        align-items: center;
-    }
-
-    /* Форма */
-    form {
+    .image-frame {
         width: 100%;
-    }
-
-    input, button {
-        width: 100%;
-        font-size: 16px;
-    }
-
-    /* Картинки */
-    img {
-        max-width: 100%;
         height: auto;
     }
 
-    /* Отступы */
-    .block {
-        padding: 15px;
+    .hero-img {
+        height: auto;
+    }
+
+    /* GOAL */
+    .banner-box {
+        font-size: 18px;
+        padding: 20px;
+    }
+
+    .main-photo {
+        height: 250px;
+    }
+
+    /* COURSES */
+    .courses-layout {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .courses-list {
+        width: 100%;
+    }
+
+    .course-item {
+        padding: 20px;
+        font-size: 14px;
+    }
+
+    .course-card-active {
+        width: 100%;
+        padding: 25px;
+        min-height: auto;
+    }
+
+    .card-content h3 {
+        font-size: 26px;
+    }
+
+    .card-content img {
+        max-height: 200px;
+    }
+
+    /* TEACHERS */
+    .teachers-flex {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .t-img-box {
+        width: 140px;
+        height: 140px;
+    }
+
+    .title-white {
+        font-size: 24px;
+        margin: 60px 0 30px;
+    }
+
+    /* FORM */
+    .form-wrapper {
+        padding: 25px;
+    }
+
+    .course-selection-grid {
+        grid-template-columns: 1fr;
+    }
+
+    input {
+        padding: 14px;
+    }
+
+    .btn-submit {
+        padding: 16px;
+        font-size: 16px;
+    }
+
+    /* ФОН ФИГУРЫ УМЕНЬШАЕМ (чтобы не мешали) */
+    .bg-shape {
+        transform: scale(0.6);
+        opacity: 0.4;
+    }
+
+    /* скрыть часть лишних фигур */
+    .circle-f2,
+    .triangle-f3,
+    .circle-f4,
+    .triangle-f4 {
+        display: none;
     }
 }
