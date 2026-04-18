@@ -19,6 +19,12 @@ def send_telegram_message(text):
     except Exception as e:
         print(f"Ошибка отправки в TG: {e}")
 
+from flask import send_from_directory
+
+@app.route('/google02cd12e531be659a.html')
+def google_verify():
+    return send_from_directory('', 'google02cd12e531be659a.html')
+
 @app.route('/')
 def home():
     return render_template('index.html')
