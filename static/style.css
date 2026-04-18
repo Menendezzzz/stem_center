@@ -267,3 +267,22 @@ input:focus { border-color: var(--orange); outline: none; background: #FFFBF0; }
         display: none;
     }
 }
+
+.final-text {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    margin: 80px 0 40px;
+    color: white;
+    text-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+.final-text {
+    animation: glow 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from { transform: scale(1); opacity: 0.8; }
+    to { transform: scale(1.05); opacity: 1; }
+}
