@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>STEM SUPERNOVA — Образовательный центр</title>
+    <meta name="description" content="STEM SUPERNOVA — образовательный центр в Бишкеке. Курсы по математике, физике, химии, биологии, программированию и робототехнике для учеников 5–8 классов.">
+    <meta name="keywords" content="курсы Бишкек, STEM, математика, физика, программирование, робототехника, обучение Бишкек">
+    <meta name="robots" content="index, follow">
+    
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bad+Script:wght@600;800&display=swap" rel="stylesheet">
@@ -158,7 +162,7 @@ function openCourse(id) {
 }
 
 function showT(id) {
-    const data = { t1: "Блек Бро — Опыт 5 лет.", t2: "Вайт бро — Математика.", t3: "Вуман бро — Роботы." };
+    const data = { t1: "Блек Бро — Опыт 5 лет.", t2: "Вуман бро — Математика.", t3: "Вайт бро — Роботы." };
     const info = document.getElementById('t-info');
     info.innerText = data[id];
     info.style.display = "block";
