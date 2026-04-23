@@ -3,7 +3,6 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
-# НАСТРОЙКИ TELEGRAM
 TELEGRAM_TOKEN = '8773383067:AAG1dK0iiijAWO6pDiSWSTXWsSVDwCCBpko'
 TELEGRAM_CHAT_ID = '1096704043'
 
@@ -43,7 +42,6 @@ def submit():
     )
 
     send_telegram_message(message)
-    # Возвращаем статус 200 (ОК) без текста, чтобы JS показал модалку
     return '', 200
 
 if __name__ == '__main__':

@@ -8,6 +8,7 @@
     <meta name="keywords" content="курсы Бишкек, STEM, математика, физика, программирование, робототехника, обучение Бишкек">
     <meta name="robots" content="index, follow">
     
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/favicon.png') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bad+Script:wght@600;800&display=swap" rel="stylesheet">
@@ -30,7 +31,7 @@
             <a href="https://www.instagram.com/supernova.stem" target="_blank"
                style="display:flex; align-items:center; justify-content:center; width:42px; height:42px; border-radius:50%; background:white;">
                 
-                <!-- Instagram SVG -->
+             
                 <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#FF6600" viewBox="0 0 24 24">
                     <path d="M7.75 2h8.5A5.76 5.76 0 0 1 22 7.75v8.5A5.76 5.76 0 0 1 16.25 22h-8.5A5.76 5.76 0 0 1 2 16.25v-8.5A5.76 5.76 0 0 1 7.75 2zm0 2A3.76 3.76 0 0 0 4 7.75v8.5A3.76 3.76 0 0 0 7.75 20h8.5A3.76 3.76 0 0 0 20 16.25v-8.5A3.76 3.76 0 0 0 16.25 4h-8.5z"/>
                     <path d="M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2A3 3 0 1 0 12 15a3 3 0 0 0 0-6z"/>
@@ -92,15 +93,15 @@
         <div class="teachers-flex">
             <div class="t-card" onclick="showT('t1')">
                 <div class="t-img-box"><img src="{{ url_for('static', filename='images/t1.jpg') }}"></div>
-                <span>Блек Бро</span>
+                <span>Селим Югазиев</span>
             </div>
             <div class="t-card" onclick="showT('t2')">
                 <div class="t-img-box"><img src="{{ url_for('static', filename='images/t2.jpg') }}"></div>
-                <span>Вайт бро</span>
+                <span>Дөөлөс Айбек уулу</span>
             </div>
             <div class="t-card" onclick="showT('t3')">
                 <div class="t-img-box"><img src="{{ url_for('static', filename='images/t3.jpg') }}"></div>
-                <span>Вуман бро</span>
+                <span>Акылай Доргоева</span>
             </div>
         </div>
         <div id="t-info" class="teacher-bio"></div>
@@ -162,14 +163,14 @@ function openCourse(id) {
 }
 
 function showT(id) {
-    const data = { t1: "Блек Бро — Опыт 5 лет.", t2: "Вуман бро — Математика.", t3: "Вайт бро — Роботы." };
+    const data = { t1: "Опытный химик, готовит учеников по ОРТ, SAT", t2: "Физик-математик, PhD по Физике.", t3: "Ведущий специалист по программе Simple AI." };
     const info = document.getElementById('t-info');
     info.innerText = data[id];
     info.style.display = "block";
     info.classList.remove('pop'); void info.offsetWidth; info.classList.add('pop');
 }
 
-// Отправка формы без перезагрузки
+
 document.getElementById('enrollmentForm').onsubmit = async (e) => {
     e.preventDefault();
     const response = await fetch('/submit', { method: 'POST', body: new FormData(e.target) });
