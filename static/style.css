@@ -1,9 +1,7 @@
-
 :root {
     --blue: #41AFFF;
     --orange: #FF6600;
 }
-
 
 html { scroll-behavior: smooth; }
 
@@ -14,9 +12,6 @@ body {
     color: white;
     overflow-x: hidden;
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Bad+Script&display=swap')
-
 
 .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; position: relative; }
 
@@ -134,151 +129,54 @@ input:focus { border-color: var(--orange); outline: none; background: #FFFBF0; }
 @keyframes pop { 0% { transform: scale(0.9); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
 .pop { animation: pop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; }
 
-/* 📱 МОБИЛЬНАЯ ВЕРСИЯ (ИСПРАВЛЕННАЯ) */
+/* 📱 Только для телефонов */
 @media (max-width: 768px) {
 
     body {
-        padding: 0;
+        padding: 10px;
     }
 
-    .container {
-        padding: 0 15px;
-    }
-
-    /* HEADER */
-    .mini-logo {
-        width: 55px;
-    }
-
-    .btn-top-reg {
-        padding: 10px 20px;
-        font-size: 12px;
-    }
-
-    /* HERO */
-    .hero {
-        padding: 120px 0 40px;
-    }
-
-    .hero-grid {
-        flex-direction: column;
-        text-align: center;
-        gap: 30px;
-    }
-
-    .brand-name {
-        font-size: 48px;
-        line-height: 1;
-    }
-
-    .orange-tag {
-        font-size: 14px;
-        padding: 10px 20px;
-    }
-
-    .image-frame {
-        width: 100%;
-        height: auto;
-    }
-
-    .hero-img {
-        height: auto;
-    }
-
-    /* GOAL */
-    .banner-box {
-        font-size: 18px;
-        padding: 20px;
-    }
-
-    .main-photo {
-        height: 250px;
-    }
-
-    /* COURSES */
-    .courses-layout {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .courses-list {
-        width: 100%;
-    }
-
-    .course-item {
-        padding: 20px;
-        font-size: 14px;
-    }
-
-    .course-card-active {
-        width: 100%;
-        padding: 25px;
-        min-height: auto;
-    }
-
-    .card-content h3 {
-        font-size: 26px;
-    }
-
-    .card-content img {
-        max-height: 200px;
-    }
-
-    /* TEACHERS */
-    .teachers-flex {
-        flex-direction: column;
-        gap: 30px;
-    }
-
-    .t-img-box {
-        width: 140px;
-        height: 140px;
-    }
-
-    .title-white {
+    /* Заголовки */
+    h1 {
         font-size: 24px;
-        margin: 60px 0 30px;
+        text-align: center;
     }
 
-    /* FORM */
-    .form-wrapper {
-        padding: 25px;
+    h2 {
+        font-size: 18px;
+        text-align: center;
     }
 
-    .course-selection-grid {
-        grid-template-columns: 1fr;
+    /* Карточки курсов */
+    .course-card {
+        width: 100% !important;
+        margin-bottom: 15px;
     }
 
-    input {
-        padding: 14px;
+    /* Контейнер курсов */
+    .courses-container {
+        flex-direction: column !important;
+        align-items: center;
     }
 
-    .btn-submit {
-        padding: 16px;
+    /* Форма */
+    form {
+        width: 100%;
+    }
+
+    input, button {
+        width: 100%;
         font-size: 16px;
     }
 
-    /* ФОН ФИГУРЫ УМЕНЬШАЕМ (чтобы не мешали) */
-    .bg-shape {
-        transform: scale(0.6);
-        opacity: 0.4;
+    /* Картинки */
+    img {
+        max-width: 100%;
+        height: auto;
     }
 
-    /* скрыть часть лишних фигур */
-    .circle-f2,
-    .triangle-f3,
-    .circle-f4,
-    .triangle-f4 {
-        display: none;
+    /* Отступы */
+    .block {
+        padding: 15px;
     }
-}
-.final-text {
-    text-align: center;
-    font-family: 'Bad Script', serif;
-    font-size: 42px;
-    font-weight: 800;
-    letter-spacing: 3px;
-    margin: 80px 0 40px;
-    color: white;
-    text-shadow: 0 10px 30px rgba(0,0,0,0.25);
 }
